@@ -13,12 +13,19 @@ class PageManager {
 
   PageManager() {
     html.window.onHashChange.listen((_) {
-      var locationInfo = new Location();
-      for (var page in pages) {
-        page.updateLocation(this, locationInfo);
-      }
+      doLocation();
     });
   }
+
+  void doLocation({Location locationInfo:null}) {
+    if(locationInfo == null) {
+      locationInfo = new Location();
+    }
+    for (var page in pages) {
+      page.updateLocation(this, locationInfo);
+    }
+  }
+
 
   void doEvent(PageManagerEvent ev) {
     if (ev == PageManagerEvent.startLoading) {
