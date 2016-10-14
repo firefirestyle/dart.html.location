@@ -28,10 +28,10 @@ class Location {
       this._baseAddress = addr.replaceFirst(new RegExp(r"/[^/]*$"), "/");
     }
     {
-      this._scheme = this._baseAddress.replaceFirst(new RegExp(r"::.*$"), "");
+      this._scheme = this._baseAddress.replaceFirst(new RegExp(r":\/\/.*$"), "");
     }
     {
-      var v= this._baseAddress.replaceFirst(new RegExp(r".*::"), "");
+      var v= this._baseAddress.replaceFirst(new RegExp(r".*:\/\/"), "");
       this._host = v.replaceFirst(new RegExp(r"/.*"), "");
     }
     {
