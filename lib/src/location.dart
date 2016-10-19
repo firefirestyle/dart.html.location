@@ -1,4 +1,4 @@
-part of location;
+part of firefirestyle.location;
 
 class Location {
   String _hash = "";

@@ -1,4 +1,4 @@
-library location;
+library firefirestyle.location;
 import 'dart:html' as html;
 
 part 'src/location.dart';
