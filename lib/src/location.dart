@@ -21,6 +21,11 @@ class Location {
   Map<String, String> get urlValues => _urlValues;
   Map<String, String> get hashValues => _hashValues;
 
+  String getValue(String key) {
+    var v = _values[key];
+    return (v == null?"":v);
+  }
+
   Location() {
     this._hash = html.window.location.hash;
     {
