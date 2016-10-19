@@ -21,9 +21,21 @@ class Location {
   Map<String, String> get urlValues => _urlValues;
   Map<String, String> get hashValues => _hashValues;
 
-  String getValue(String key) {
+  String getValueAsString(String key, String defaultValue) {
     var v = _values[key];
-    return (v == null?"":v);
+    return (v == null ? defaultValue : v);
+  }
+
+  int getValueAsInt(String key, int defaultValue) {
+    var v = _values[key];
+    if (v == null) {
+      return defaultValue;
+    }
+    try {
+      return int.parse(v);
+    } catch (e) {
+      return defaultValue;
+    }
   }
 
   Location() {
@@ -36,7 +48,7 @@ class Location {
       this._scheme = this._baseAddress.replaceFirst(new RegExp(r"://.*$"), "");
     }
     {
-      var v= this._baseAddress.replaceFirst(new RegExp(r".*://"), "");
+      var v = this._baseAddress.replaceFirst(new RegExp(r".*://"), "");
       this._host = v.replaceFirst(new RegExp(r"/.*"), "");
     }
     {
