@@ -40,7 +40,7 @@ class PageManager {
   }
 
   bool assignLocation(String url) {
-    if (_isLoading == true) {
+    if (_isLoading == false) {
       html.window.location.assign(url);
       return true;
     } else {
@@ -49,7 +49,7 @@ class PageManager {
   }
 
   bool assignReplace(String url) {
-    if (_isLoading == true) {
+    if (_isLoading == false) {
       html.window.location.replace(url);
       return true;
     } else {
