@@ -1,4 +1,4 @@
-import 'package:dart.html.location/location.dart' as loc;
+import 'package:firefirestyle.html.location/location.dart' as loc;
 void main() {
   print("hello client");
   var l = new loc.Location();
