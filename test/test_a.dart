@@ -6,6 +6,7 @@ void main() {
     var lo = new loc.Location.fromHref("scheme://host/path?qa=a#hash?qh=b");
     unit.expect("scheme://host/path?qa=a#hash?qh=b",lo.href);
     unit.expect("#hash?qh=b",lo.hash);
+    unit.expect("#hash",lo.hashPath);
     print(lo.hash);
   });
 

@@ -72,8 +72,8 @@ class Location {
       }
     }
     {
-      int end = _hash.indexOf("?") + 1;
-      end = (end == 0 ? _hash.length : end);
+      int end = _hash.indexOf("?");
+      end = (end == -1 ? _hash.length : end);
       _hashPath = _hash.substring(0, end);
     }
   }
