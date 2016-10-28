@@ -1,6 +1,6 @@
-library firefirestyle.location;
+library firefirestyle.location.html;
 import 'dart:html' as html;
-import 'location.dart';
+import 'package:firefirestyle.location/location.dart';
 
 part 'src/location.dart';
 part 'src/page.dart';

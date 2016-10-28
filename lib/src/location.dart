@@ -1,4 +1,4 @@
-part of firefirestyle.location;
+part of firefirestyle.location.html;
 
 class HtmlLocation extends Location{
 
