@@ -46,6 +46,7 @@ class Location {
       this._href = href;
       int hashSt = hash.indexOf("#");
       this._hash = hash.substring(hashSt == -1 ? hash.length : hashSt);
+      print(">>> ${_href} ::: ${_hash}");
     }
     {
       var addr = _href.replaceFirst(new RegExp("[#\?].*"), "");
