@@ -19,7 +19,7 @@ class PageManager {
 
   void doLocation({Location locationInfo:null}) {
     if(locationInfo == null) {
-      locationInfo = new Location();
+      locationInfo = new HtmlLocation();
     }
     for (var page in pages) {
       page.updateLocation(this, locationInfo);
