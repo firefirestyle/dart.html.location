@@ -19,6 +19,7 @@ class Location {
   String get path => _path;
   String get withSchemeHostPath => _baseAddress;
   String get baseAddr => "${scheme}://${host}";
+  String get baseAddrWithPath => baseAddr + path;
   String get hashPath => _hashPath; //
   Map<String, String> get values => _values;
   Map<String, String> get urlValues => _urlValues;
