@@ -60,7 +60,7 @@ class Location {
       this._host = v.replaceFirst(new RegExp(r"/.*"), "");
     }
     {
-      this._path = this._baseAddress..replaceFirst(new RegExp(r".*/"), "/");
+      this._path = this._baseAddress.replaceFirst(new RegExp(r".*/"), "/");
     }
     {
       var prop1 = _hashValues = _prop(_hash);
