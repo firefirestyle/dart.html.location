@@ -9,5 +9,18 @@ void main() {
     unit.expect("#hash",lo.hashPath);
     print(lo.hash);
   });
-
+//file:///android_asset/www/index.html#/Me
+unit.test("basic b", () {
+  var lo = new loc.Location.fromHref("file:///android_asset/www/index.html#/Me");
+  unit.expect("file",lo.scheme);
+  unit.expect("file://",lo.baseAddr);
+  unit.expect("",lo.host);
+  unit.expect("#/Me",lo.hash);
+  unit.expect("/android_asset/www/index.html",lo.path);
+  unit.expect("file:///android_asset/www/index.html",lo.baseAddrWithPath);
+//  unit.expect("file",lo.scheme);
+//  unit.expect("#hash?qh=b",lo.hash);
+//  unit.expect("#hash",lo.hashPath);
+  print(lo.hash);
+});
 }

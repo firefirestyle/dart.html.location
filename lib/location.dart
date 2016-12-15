@@ -50,7 +50,7 @@ class Location {
     }
     {
       var addr = _href.replaceFirst(new RegExp("[#\?].*"), "");
-      this._baseAddress = addr.replaceFirst(new RegExp(r"/[^/]*$"), "/");
+      this._baseAddress = addr;//.replaceFirst(new RegExp(r"/[^/]*$"), "/");
     }
     {
       this._scheme = this._baseAddress.replaceFirst(new RegExp(r"://.*$"), "");
@@ -60,7 +60,8 @@ class Location {
       this._host = v.replaceFirst(new RegExp(r"/.*"), "");
     }
     {
-      this._path = this._baseAddress.replaceFirst(new RegExp(r".*/"), "/");
+      this._path = this._baseAddress.replaceFirst(this.scheme+"://", "").replaceFirst(this.host, "");
+//      this._path = this._baseAddress.replaceFirst(new RegExp(r".*/"), "/");
     }
     {
       var prop1 = _hashValues = _prop(_hash);
